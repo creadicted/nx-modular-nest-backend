@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "importHelpers": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -15,8 +16,8 @@
       "dom"
     ],
     "baseUrl": ".",
-    "paths": {
-    }
+    "paths": {},
+    "module": "es2015"
   },
   "exclude": [
     "node_modules",

@@ -7,5 +7,11 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "backends-furry-cats": {
+      "tags": [
+        "backend"
+      ]
+    }
+  }
 }

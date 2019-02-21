@@ -2,13 +2,71 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "backends-furry-cats": {
+      "root": "apps/backends/furry-cats",
+      "sourceRoot": "apps/backends/furry-cats/src",
+      "projectType": "application",
+      "prefix": "backends-furry-cats",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/builders:node-build",
+          "options": {
+            "outputPath": "dist/apps/backends/furry-cats",
+            "main": "apps/backends/furry-cats/src/main.ts",
+            "tsConfig": "apps/backends/furry-cats/tsconfig.app.json",
+            "assets": [
+              "apps/backends/furry-cats/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backends/furry-cats/src/environments/environment.ts",
+                  "with": "apps/backends/furry-cats/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/builders:node-execute",
+          "options": {
+            "buildTarget": "backends-furry-cats:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/backends/furry-cats/tsconfig.app.json",
+              "apps/backends/furry-cats/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/backends/furry-cats/jest.config.js",
+            "tsConfig": "apps/backends/furry-cats/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
     "defaultCollection": "@nrwl/schematics"
-    
   }
 }
