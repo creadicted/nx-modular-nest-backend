@@ -1,0 +1,6 @@
+{
+  "watch": ["apps/backends/furry-cats/src", "libs-backend"],
+  "ext": "ts",
+  "ignore": ["apps/backends/furry-cats/src/**/*.spec.ts"],
+  "exec": "ts-node -P apps/backends/furry-cats/tsconfig.app.json -r tsconfig-paths/register apps/backends/furry-cats/src/main.ts"
+}

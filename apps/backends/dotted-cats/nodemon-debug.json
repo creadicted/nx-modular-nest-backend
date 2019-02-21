@@ -1,0 +1,7 @@
+{
+  "watch": ["apps/backends/dotted-cats/src", "libs-backend"],
+  "ext": "ts",
+  "ignore": ["apps/backends/dotted-cats/src/**/*.spec.ts"],
+  "env": { "TS_NODE_PROJECT": "apps/backends/dotted-cats/tsconfig.app.json" },
+  "exec": "node  --inspect-brk -r ts-node/register -r tsconfig-paths/register ./apps/backends/dotted-cats/src/main.ts"
+}

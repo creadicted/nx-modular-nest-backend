@@ -3,13 +3,14 @@
  * This is only a minimal backend to get started.
  **/
 
+import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(3333, () => {
+    app.useGlobalPipes(new ValidationPipe());
     console.log('Listening at http://localhost:3333');
   });
 }
