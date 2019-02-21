@@ -4,7 +4,9 @@
     "types": [
       "node",
       "jest"
-    ]
+    ],
+    "module": "commonjs",
+    "target": "es6"
   },
   "include": [
     "**/*.ts"
