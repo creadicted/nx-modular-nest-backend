@@ -12,6 +12,11 @@
       "tags": [
         "backend"
       ]
+    },
+    "backends-dotted-cats": {
+      "tags": [
+        "backend"
+      ]
     }
   }
 }
