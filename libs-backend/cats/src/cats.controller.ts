@@ -1,20 +1,12 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Param,
-  Post,
-  UseGuards,
-  UseInterceptors,
-} from '@nestjs/common';
-import { Roles } from '../common/decorators/roles.decorator';
-import { RolesGuard } from '../common/guards/roles.guard';
-import { LoggingInterceptor } from '../common/interceptors/logging.interceptor';
-import { TransformInterceptor } from '../common/interceptors/transform.interceptor';
-import { ParseIntPipe } from '../common/pipes/parse-int.pipe';
-import { CatsService } from './cats.service';
-import { CreateCatDto } from './dto/create-cat.dto';
-import { Cat } from './interfaces/cat.interface';
+import {Roles} from '@lib-common/cats/decorators/roles.decorator';
+import {RolesGuard} from '@lib-common/cats/guards/roles.guard';
+import {LoggingInterceptor} from '@lib-common/cats/interceptors/logging.interceptor';
+import {TransformInterceptor} from '@lib-common/cats/interceptors/transform.interceptor';
+import {ParseIntPipe} from '@lib-common/cats/pipes/parse-int.pipe';
+import {Body, Controller, Get, Param, Post, UseGuards, UseInterceptors} from '@nestjs/common';
+import {CatsService} from './cats.service';
+import {CreateCatDto} from './dto/create-cat.dto';
+import {Cat} from './interfaces/cat.interface';
 
 @Controller('cats')
 @UseGuards(RolesGuard)
@@ -36,7 +28,7 @@ export class CatsController {
   @Get(':id')
   findOne(
     @Param('id', new ParseIntPipe())
-    id,
+    id
   ) {
     // logic
   }

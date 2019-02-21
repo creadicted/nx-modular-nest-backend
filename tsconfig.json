@@ -12,6 +12,8 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
+      "@lib-common/cats": ["libs-backend/common/src"],
+      "@lib-common/cats/*": ["libs-backend/common/src/*"],
       "@lib-backend/cats": ["libs-backend/cats/src"],
       "@lib-backend/cats/*": ["libs-backend/cats/src/*"]
     },
