@@ -1,0 +1,11 @@
+{
+  "npmScope": "nx-modular-nest-backend",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {}
+}
